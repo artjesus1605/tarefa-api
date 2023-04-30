@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Busca de clima</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <h3>Confira o clima de uma cidade:</h3>
+        <div class="form-input-container">
+          <input
+            class=""
+            type="text"
+            placeholder="Digite o nome da cidade"
+            id="cidade-input"
+          />
+          <button type="submit" id="btnEnviar">
+            Enviar
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+      <div id="weather-data">
+        <h2>
+          <i class="fa-solid fa-location-dot"></i>
+          <span id="cidade"></span>
+          <img
+            src=""
+            alt="Bandeira do pais"
+            id="pais"
+          />
+        </h2>
+        <p id="temperatura"><span></span>&deg;C</p>
+        <div id="descricao-container">
+          <p id="descricao"></p>
+          <img
+            src="https://openweathermap.org/img/wn/01d.png"
+            alt="Condições do tempo"
+            id="weather-icon"
+          />
+        </div>
+        <div id="detalhes-container">
+          <p id="umidade">
+            <i class="fa-solid fa-droplet"></i>
+            <span></span>
+          </p>
+          <p id="vento">
+            <i class="fa-solid fa-wind"></i>
+            <span></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
