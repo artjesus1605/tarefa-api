@@ -11,6 +11,8 @@ const weatherIcon = document.querySelector("#weather-icon")
 const coutryIcon = document.querySelector("#pais")
 const umidade = document.querySelector("#umidade span")
 const vento = document.querySelector("#vento span")
+const weatherContainer = document.querySelector("#weather-data")
+
 
 const getweatherData = async (cidade) =>{
   const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${apikey}&lang=pt_br`
@@ -32,6 +34,8 @@ const showWheatherData = async (cidade) =>{
   coutryIcon.setAttribute("src", apiPaisUrl + data.sys.country + ".png")
   umidade.innerText = `${data.main.humidity}%`
   vento.innerText = `${data.wind.speed}`
+  weatherContainer.classList.remove("hide")
+
 }
 
 botao.addEventListener("click", (event) =>{
@@ -39,4 +43,12 @@ botao.addEventListener("click", (event) =>{
   const cidade = cidadeInput.value
 
   showWheatherData(cidade)
+})
+
+cidadeInput.addEventListener("keyup", (e) =>{
+  if (e.code === "Enter") {
+    const cidade = e.target.value
+
+    showWheatherData(cidade)
+  }
 })
